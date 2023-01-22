@@ -1,0 +1,44 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: rgb(2, 2, 36);
+}
+.container{
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.spinner{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    position: relative;
+    background-image: linear-gradient(0deg, rgb(247, 42, 251),rgb(70, 30, 232));
+    animation: spin .5s linear infinite;
+}
+
+.spinner::after{
+    content: "";
+    position: absolute;
+    border-radius: inherit;
+    width: 80%;
+    height: 80%;
+    background-color: rgb(2, 2, 36);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+@keyframes spin{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
